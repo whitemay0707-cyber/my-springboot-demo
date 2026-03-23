@@ -2,11 +2,15 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 
-@Entity // 告诉电脑：这是一个数据库表
+@Entity
 @Table(name = "user_table")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id; // 自动生成的编号
-    public String username; // 用户名
+    public Long id;
+
+    public String username;
+
+    // 必须要加这一行！
+    public String password;
 }
